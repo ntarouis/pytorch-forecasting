@@ -26,12 +26,13 @@ def integer_histogram(
         histogram
     """
     uniques, counts = torch.unique(data, return_counts=True)
+    print uniques
     if min is None:
         min = uniques.min()
     if max is None:
         max = uniques.max()
-    print("forked")
-    hist = torch.zeros(max - min + 1 , dtype=torch.long, device=data.device).scatter(dim=0, index=uniques - min -1, src=counts)
+    print 'forked'
+    hist = torch.zeros(max - min + 1 , dtype=torch.long, device=data.device).scatter(dim=0, index=uniques, src=counts)
     return hist
 
 
