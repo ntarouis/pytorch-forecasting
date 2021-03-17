@@ -31,7 +31,7 @@ def integer_histogram(
     if max is None:
         max = uniques.max()
     print("forked")
-    hist = torch.zeros(max - min + 1 , dtype=torch.long, device=data.device).scatter(dim=0, index=uniques - min -1, src=(counts-1))
+    hist = torch.zeros(max - min + 1 , dtype=torch.long, device=data.device).scatter(dim=0, index=uniques - min -1, src=counts)
     return hist
 
 
