@@ -30,7 +30,7 @@ def integer_histogram(
         min = uniques.min()
     if max is None:
         max = uniques.max()
-    hist = torch.zeros(max - min + 1, dtype=torch.long, device=data.device).scatter(
+    hist = torch.zeros(max - min , dtype=torch.long, device=data.device).scatter(
         dim=0, index=uniques - min, src=counts
     )
     return hist
