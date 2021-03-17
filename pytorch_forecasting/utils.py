@@ -31,10 +31,8 @@ def integer_histogram(
         min = uniques.min()
     if max is None:
         max = uniques.max()
-    max=uniques.max()
-    min=uniques.min()
-#     hist = torch.zeros(max - min + 1 , dtype=torch.long, device=data.device).scatter(dim=0, index=uniques - min, src=counts)
-#     return hist
+
+
 
 
 def groupby_apply(
